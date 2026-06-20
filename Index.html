@@ -69,7 +69,16 @@
             text-align: center;
             overflow: hidden;
         }
-
+.hero {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.75), 
+    rgba(0, 0, 0, 0.75)
+  ),
+  url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
         .hero::before {
             content: '';
             position: absolute;
@@ -103,13 +112,13 @@
             letter-spacing: 0.02em;
         }
 
-        .hero .social-links {
+        .hero .social-links 
             display: flex;
             justify-content: center;
             gap: 1rem;
         }
 
-        .hero .social-links a {
+     
             color: #d1d5db;
             transition: color 0.2s;
             display: flex;
@@ -495,10 +504,10 @@
                 <span class="brand-name">Persuadly</span>
                 <p class="tagline">The psychology behind why people buy</p>
                 <div class="social-links">
-                    <a href="#" aria-label="Instagram" title="Instagram">
+                    <a href=" https://www.instagram.com/persuadly?igsh=cnRwdGJ3eHE2YW9n" aria-label="Instagram" title="Instagram">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </a>
-                    <a href="#" aria-label="TikTok" title="TikTok">
+                    <a href="https://www.tiktok.com/@persuadly?_r=1&_t=ZS-97NWQ1CH3YX" aria-label="TikTok" title="TikTok">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 8.5v-1a5 5 0 0 1-5-5h-1.5v11.5a3.5 3.5 0 1 1-3.5-3.5v-1.5a5 5 0 1 0 5 5V9.5A5 5 0 0 0 19.5 8.5z"/></svg>
                     </a>
                 </div>
@@ -510,9 +519,9 @@
                 <!-- Card 1: FREE -->
                 <div class="product-card">
                     <span class="badge">📥 Free</span>
-                    <h3>The Buyer's Cheat Sheet</h3>
-                    <p>Free guide — the 5 psychological triggers that make people buy instantly.</p>
-                    <a href="paste-your-link-here" class="btn-primary outline" style="display:block;text-align:center;">Download Free →</a>
+                    <h3>The Beginnings starter guide </h3>
+                    <p> Everything you need to know about copywriting that attracts and converts.</p>
+                    <a href="https://drive.google.com/file/d/1-87L6LzWtWE2-YFhTXZ54QCaZ4VMaq5u/view?usp=drivesdk" class="btn-primary outline" style="display:block;text-align:center;">Download Free →</a>
                 </div>
 
                 <!-- Card 2: PAID ($27) -->
@@ -527,7 +536,7 @@
                 <!-- Card 3: COMING SOON ($299) -->
                 <div class="product-card">
                     <span class="badge">📖 Coming Soon</span>
-                    <h3>The Persuadly Playbook</h3>
+                    <h3>The Psychology of selling Playbook</h3>
                     <div class="price">$299</div>
                     <p>The complete buyer psychology playbook — coming soon.</p>
                     <button class="btn-primary" onclick="showProductPage('playbook')">Pre-Order Now →</button>
@@ -550,17 +559,19 @@
             <div class="detail-section">
                 <h4>📦 What's inside</h4>
                 <ul>
-                    <li>Content frameworks that stop the scroll</li>
-                    <li>Hook templates proven to grab attention</li>
-                    <li>Buyer psychology principles behind every template</li>
+                    <li>Copy upgrade that instantly upgrade weak content</li>
+                    <li> 45 Hook proven to grab attention</li>
+                    <li> The buyer research system </li>
                     <li>Fill-in-the-blank copy formulas</li>
-                    <li>Bonus: Swipe file of high-converting content examples</li>
+                    <li> THE P.A.I.D copy framework
+        
+            Bonus: Your mini guidebook on how to use this toolkit to write better content in 24 hour </li>
                 </ul>
             </div>
 
             <!-- Why This Works -->
             <div class="detail-section">
-                <h4>🧠 Why this works</h4>
+                <h4>🧠 How this works</h4>
                 <div class="persuasion-box">
                     <p>Most people write content and wonder why nobody buys. This toolkit gives you the exact psychological frameworks that make readers feel understood — and ready to buy. No guessing. No wasting hours. Just content that converts.</p>
                 </div>
@@ -584,7 +595,7 @@
                 <p class="sub">Get instant access to the toolkit.</p>
 
                 <div class="form-note">
-                    <strong>How this works:</strong> Fill the form below. Within 1 hour you'll receive a Payoneer payment request to your email. Once paid, your product arrives in your inbox within 24 hours.
+                    <strong>How this works:</strong> Fill the form below. Within few hours you'll receive a Payoneer payment request to your email. Once paid, your product arrives in your inbox within 24 hours.
                 </div>
 
                 <form netlify netlify-honeypot="bot-field" name="order-toolkit" method="POST">
@@ -628,7 +639,7 @@
             <button class="back-link" onclick="hideAllProducts()">← Back to all products</button>
 
             <div class="coming-soon-tag">📖 Coming Soon</div>
-            <h1 class="detail-title">The Persuadly Playbook</h1>
+            <h1 class="detail-title">The Psychology of Selling Playbook</h1>
             <div class="detail-price">$299</div>
 
             <p style="color:#d1d5db; font-size:1.05rem; line-height:1.6; margin-bottom:1.5rem;">
@@ -681,7 +692,7 @@
 
         <!-- Footer -->
         <div class="footer">
-            © 2026 Persuadly — Built with 🧠 on Netlify
+            © 2026 Persuadly — Built with ❤️‍🔥
         </div>
 
     </div>
