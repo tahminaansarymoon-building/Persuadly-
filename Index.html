@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Persuadly — The psychology behind why people buy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <style>
+        /* ─── Reset & Base ─── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 1.25rem 1rem 3rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* ─── Typography ─── */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            color: #7c3aed;
+            text-decoration: none;
+        }
+
+        .text-muted {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .text-small {
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+
+        /* ─── Brand Header ─── */
+        .brand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-name {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #7c3aed, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            font-size: 1.25rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            color: #7c3aed;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #9ca3af;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* ─── Section Headers ─── */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-sub {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ─── Product Cards ─── */
+        .product-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: border-color 0.25s ease;
+        }
+
+        .product-card:hover {
+            border-color: #7c3aed;
+        }
+
+        .product-card .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-free {
+            background: #065f46;
+            color: #6ee7b7;
+        }
+
+        .badge-paid {
+            background: #7c3aed;
+            color: #ffffff;
+        }
+
+        .badge-coming {
+            background: #1e1b4b;
+            color: #a78bfa;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .product-card .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #7c3aed;
+            margin: 0.35rem 0 0.4rem;
+        }
+
+        .product-card .price .original {
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+
+        .product-card p {
+            color: #d1d5db;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background: #6d28d9;
+        }
+
+        .btn-primary.outline {
+            background: transparent;
+            border: 2px solid #7c3aed;
+            color: #7c3aed;
+        }
+
+        .btn-primary.outline:hover {
+            background: #7c3aed;
+            color: #ffffff;
+        }
+
+        /* ─── Product Detail Page ─── */
+        .product-detail {
+            display: none;
+            margin-top: 1.5rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .product-detail.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #7c3aed;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .back-link:hover {
+            color: #a78bfa;
+        }
+
+        .detail-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+        }
+
+        .detail-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #7c3aed;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-price .original {
+            font-size: 1.1rem;
+            color: #6b7280;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-section ul li {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .detail-section ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7c3aed;
+            font-weight: 700;
+        }
+
+        .persuasion-box {
+            background: #141414;
+            border-left: 4px solid #7c3aed;
+            padding: 1.25rem 1.25rem 1rem;
+            border-radius: 8px;
+            margin: 1.25rem 0;
+        }
+
+        .persuasion-box p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .value-stack {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #141414;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            margin: 1.25rem 0;
+            border: 1px solid #2a2a2a;
+        }
+
+        .value-stack .label {
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        .value-stack .amount {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .value-stack .amount .strike {
+            color: #6b7280;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-right: 0.5rem;
+        }
+
+        .value-stack .amount .highlight {
+            color: #7c3aed;
+        }
+
+        /* ─── Order Form ─── */
+        .order-form-wrap {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .order-form-wrap h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .order-form-wrap .sub {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-note {
+            background: #1e1b4b;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: #c4b5fd;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .form-group {
+            margin-bottom: 1.1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #d1d5db;
+            margin-bottom: 0.3rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            background: #0a0a0a;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #7c3aed;
+        }
+
+        .form-group select option {
+            background: #141414;
+            color: #ffffff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 0.9rem;
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #6d28d9;
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            margin-top: 2.5rem;
+            color: #4b5563;
+            font-size: 0.75rem;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 1.5rem;
+        }
+
+        /* ─── Toast / Alert ─── */
+        .toast {
+            display: none;
+            background: #1e1b4b;
+            border: 1px solid #7c3aed;
+            color: #c4b5fd;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .toast.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* ─── Utility ─── */
+        .hidden {
+            display: none !important;
+        }
+
+        .mt-1 {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+
+        <!-- ═══ MAIN PAGE ═══ -->
+        <div id="mainPage">
+
+            <!-- Brand Header -->
+            <div class="brand-header">
+                <span class="brand-name">Persuadly</span>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram" title="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="TikTok" title="TikTok">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 8.5v-1a5 5 0 0 1-5-5h-1.5v11.5a3.5 3.5 0 1 1-3.5-3.5v-1.5a5 5 0 1 0 5 5V9.5A5 5 0 0 0 19.5 8.5z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <p class="tagline">The psychology behind why people buy</p>
+
+            <!-- Product Cards -->
+            <div class="product-grid">
+
+                <!-- Card 1: FREE -->
+                <div class="product-card">
+                    <span class="badge badge-free">📥 Free</span>
+                    <h3>The Buyer's Cheat Sheet</h3>
+                    <p>Free guide — the 5 psychological triggers that make people buy instantly.</p>
+                    <a href="paste-your-link-here" class="btn-primary outline" style="display:block;text-align:center;">Download Free →</a>
+                </div>
+
+                <!-- Card 2: PAID -->
+                <div class="product-card">
+                    <span class="badge badge-paid">🔥 Best Seller</span>
+                    <h3>Write Better Content in 24 Hours</h3>
+                    <div class="price">$27 <span class="original">$49</span></div>
+                    <p>The complete toolkit to write content that actually converts — templates, frameworks and hooks included.</p>
+                    <button class="btn-primary" onclick="showProductPage()">Get The Toolkit →</button>
+                </div>
+
+                <!-- Card 3: COMING SOON -->
+                <div class="product-card">
+                    <span class="badge badge-coming">📖 Coming Soon</span>
+                    <h3>The Persuadly Playbook</h3>
+                    <div class="price">$299</div>
+                    <p>The complete buyer psychology playbook — coming soon.</p>
+                    <button class="btn-primary" onclick="showComingSoon()">Pre-Order Now →</button>
+                </div>
+
+            </div>
+
+            <p class="text-small" style="text-align:center;margin-top:0.5rem;">© 2026 Persuadly — Built with 🧠</p>
+        </div>
+
+        <!-- ═══ PRODUCT DETAIL PAGE (hidden by default) ═══ -->
+        <div id="productPage" class="product-detail">
+
+            <!-- Back Button -->
+            <button class="back-link" onclick="hideProductPage()">← Back to all products</button>
+
+            <!-- Product Header -->
+            <h1 class="detail-title">Write Better Content in 24 Hours</h1>
+            <div class="detail-price">$27 <span class="original">$49</span></div>
+
+            <!-- What's Inside -->
+            <div class="detail-section">
+                <h4>📦 What's inside</h4>
+                <ul>
+                    <li>Content frameworks that stop the scroll</li>
+                    <li>Hook templates proven to grab attention</li>
+                    <li>Buyer psychology principles behind every template</li>
+                    <li>Fill-in-the-blank copy formulas</li>
+                    <li>Bonus: Swipe file of high-converting content examples</li>
+                </ul>
+            </div>
+
+            <!-- Why This Works -->
+            <div class="detail-section">
+                <h4>🧠 Why this works</h4>
+                <div class="persuasion-box">
+                    <p>Most people write content and wonder why nobody buys. This toolkit gives you the exact psychological frameworks that make readers feel understood — and ready to buy. No guessing. No wasting hours. Just content that converts.</p>
+                </div>
+            </div>
+
+            <!-- Value Stack -->
+            <div class="detail-section">
+                <div class="value-stack">
+                    <span class="label">Original price</span>
+                    <span class="amount"><span class="strike">$49</span></span>
+                </div>
+                <div class="value-stack" style="border-color:#7c3aed;">
+                    <span class="label">Your price today</span>
+                    <span class="amount"><span class="highlight">$27</span></span>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <div class="order-form-wrap">
+                <h4>Complete your order</h4>
+                <p class="sub">Get instant access to the toolkit.</p>
+
+                <div class="form-note">
+                    <strong>How this works:</strong> Fill the form below. Within 1 hour you'll receive a Payoneer payment request to your email. Once paid, your toolkit arrives in your inbox within 24 hours.
+                </div>
+
+                <!-- 
+                    ═══ NETLIFY FORM ═══
+                    The form submits to Netlify. You'll receive an email notification 
+                    for every submission. Configure notifications in your Netlify 
+                    dashboard under Forms → Notifications → Add Email Notification.
+                -->
+                <form netlify netlify-honeypot="bot-field" name="order" method="POST">
+                    <!-- Required hidden field for Netlify -->
+                    <input type="hidden" name="form-name" value="order" />
+
+                    <!-- Honeypot (spam prevention) -->
+                    <div style="display:none;">
+                        <label>Don't fill this out: <input name="bot-field" /></label>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="e.g. Sarah Johnson" required />
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                        <span class="text-small" style="display:block;margin-top:0.2rem;">You'll receive the Payoneer payment request at this email.</span>
+                    </div>
+
+                    <!-- Dropdown: How did you find Persuadly? -->
+                    <div class="form-group">
+                        <label for="source">How did you find Persuadly?</label>
+                        <select id="source" name="source">
+                            <option value="">— Select —</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Send My Order →</button>
+                </form>
+            </div>
+
+            <p class="text-small" style="text-align:center;margin-top:1.5rem;">🔒 Secure checkout via Payoneer. No payment taken on this site.</p>
+        </div>
+
+        <!-- ═══ TOAST / ALERT (for Coming Soon) ═══ -->
+        <div id="comingSoonToast" class="toast">
+            ✨ Coming Soon — Pre-orders aren't open yet. Follow us on social media to be the first to know!
+        </div>
+
+        <!-- Footer (visible on both pages) -->
+        <div class="footer">
+            © 2026 Persuadly — Built with 🧠 on Netlify
+        </div>
+
+    </div>
+
+    <script>
+        /* ─── Page Toggle ─── */
+        const mainPage = document.getElementById('mainPage');
+        const productPage = document.getElementById('productPage');
+
+        function showProductPage() {
+            mainPage.style.display = 'none';
+            productPage.classList.add('active');
+            // Scroll to top of product page
+            productPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function hideProductPage() {
+            mainPage.style.display = 'block';
+            productPage.classList.remove('active');
+            // Scroll back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ─── Coming Soon Toast ─── */
+        const toast = document.getElementById('comingSoonToast');
+        let toastTimeout = null;
+
+        function showComingSoon() {
+            toast.classList.add('show');
+            // Auto-hide after 5 seconds
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+  </html>
