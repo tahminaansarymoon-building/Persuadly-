@@ -59,7 +59,7 @@
         /* ─── Hero Section ─── */
         .hero {
             position: relative;
-            background-image:url ("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200");
+            background-image:url (" https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -74,7 +74,7 @@
     rgba(0, 0, 0, 0.75), 
     rgba(0, 0, 0, 0.75)
   ),
-  url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
+  ');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -655,7 +655,7 @@
                     <strong>How this works:</strong> Fill the form below. Within a few hours you'll receive a Payoneer payment request to your email. Once paid, your spot is secured. You'll get the playbook immediately on launch day.
                 </div>
 
-                <form netlify netlify-honeypot="bot-field" name="order-playbook" method="POST">
+                <form name="order" netlify action="/success.html">>
                     <input type="hidden" name="form-name" value="order-playbook" />
                     <input type="hidden" name="product" value="The Persuadly Playbook - $299" />
                     <div style="display:none;">
