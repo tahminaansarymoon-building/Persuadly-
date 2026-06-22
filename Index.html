@@ -59,7 +59,7 @@
         /* ─── Hero Section ─── */
         .hero {
             position: relative;
-            background-image:url (" https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200");
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -69,16 +69,7 @@
             text-align: center;
             overflow: hidden;
         }
-.hero {
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.75), 
-    rgba(0, 0, 0, 0.75)
-  ),
-  ');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
         .hero::before {
             content: '';
             position: absolute;
@@ -86,7 +77,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.78);
             z-index: 0;
         }
 
@@ -112,13 +103,13 @@
             letter-spacing: 0.02em;
         }
 
-        .hero .social-links 
+        .hero .social-links {
             display: flex;
             justify-content: center;
             gap: 1rem;
         }
 
-     
+        .hero .social-links a {
             color: #d1d5db;
             transition: color 0.2s;
             display: flex;
@@ -195,6 +186,12 @@
             text-decoration: line-through;
             font-weight: 400;
             margin-left: 0.6rem;
+        }
+
+        .product-card .price-small {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin: -0.3rem 0 0.6rem;
         }
 
         .product-card p {
@@ -279,11 +276,18 @@
             margin-bottom: 0.2rem;
         }
 
+        .detail-subtitle {
+            font-size: 1rem;
+            color: #d1d5db;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
         .detail-price {
             font-size: 2.2rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.2rem;
         }
 
         .detail-price .original {
@@ -291,7 +295,13 @@
             color: #6b7280;
             text-decoration: line-through;
             font-weight: 400;
-            margin-left: 0.6rem;
+            margin-right: 0.6rem;
+        }
+
+        .detail-price-small {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
         }
 
         .detail-section {
@@ -304,85 +314,101 @@
             margin-bottom: 0.6rem;
         }
 
-        .detail-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .detail-section ul li {
+        .hook-paragraph {
             color: #d1d5db;
-            font-size: 0.95rem;
-            padding: 0.4rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            line-height: 1.4;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            background: #1a1a1a;
+            padding: 1.25rem;
+            border-radius: 12px;
+            border-left: 3px solid #ffffff;
         }
 
-        .detail-section ul li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
+        /* ─── Module Cards ─── */
+        .module-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .module-card {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+        }
+
+        .module-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .module-card p {
+            color: #9ca3af;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ─── Value Stack Table ─── */
+        .value-table {
+            width: 100%;
+            background: #141414;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            overflow: hidden;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .value-table .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 1.25rem;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .value-table .row:last-child {
+            border-bottom: none;
+        }
+
+        .value-table .row .label {
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        .value-table .row .amount {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .value-table .row.highlight {
+            background: #1a1a1a;
+        }
+
+        .value-table .row.highlight .label {
             color: #ffffff;
             font-weight: 700;
         }
 
-        .persuasion-box {
-            background: #1a1a1a;
-            border-left: 4px solid #ffffff;
-            padding: 1.25rem 1.25rem 1rem;
-            border-radius: 8px;
-            margin: 1.25rem 0;
-        }
-
-        .persuasion-box p {
-            color: #d1d5db;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .value-stack {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 1rem 1.25rem;
-            border-radius: 10px;
-            margin: 1.25rem 0;
-            border: 1px solid #2a2a2a;
-        }
-
-        .value-stack .label {
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        .value-stack .amount {
+        .value-table .row.highlight .amount {
+            color: #ffffff;
             font-weight: 700;
             font-size: 1.1rem;
         }
 
-        .value-stack .amount .strike {
-            color: #6b7280;
-            text-decoration: line-through;
-            font-weight: 400;
-            margin-right: 0.5rem;
-        }
-
-        .value-stack .amount .highlight {
-            color: #ffffff;
-        }
-
-        .coming-soon-tag {
-            display: inline-block;
-            background: #2a2a2a;
-            color: #ffffff;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
+        .closing-paragraph {
+            color: #d1d5db;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 1.5rem 0 0.5rem;
+            padding: 1.25rem;
+            background: #1a1a1a;
+            border-radius: 12px;
+            border-left: 3px solid #ffffff;
         }
 
         /* ─── Order Form ─── */
@@ -504,10 +530,10 @@
                 <span class="brand-name">Persuadly</span>
                 <p class="tagline">The psychology behind why people buy</p>
                 <div class="social-links">
-                    <a href=" https://www.instagram.com/persuadly?igsh=cnRwdGJ3eHE2YW9n" aria-label="Instagram" title="Instagram">
+                    <a href="https://www.instagram.com/persuadly?igsh=cnRwdGJ3eHE2YW9n" aria-label="Instagram" title="Instagram">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                     </a>
-                    <a href="https://www.tiktok.com/@persuadly?_r=1&_t=ZS-97NWQ1CH3YX" aria-label="TikTok" title="TikTok">
+                    <a href="tiktok.com/@persuadly" aria-label="TikTok" title="TikTok">
                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 8.5v-1a5 5 0 0 1-5-5h-1.5v11.5a3.5 3.5 0 1 1-3.5-3.5v-1.5a5 5 0 1 0 5 5V9.5A5 5 0 0 0 19.5 8.5z"/></svg>
                     </a>
                 </div>
@@ -519,8 +545,8 @@
                 <!-- Card 1: FREE -->
                 <div class="product-card">
                     <span class="badge">📥 Free</span>
-                    <h3>The Beginnings starter guide </h3>
-                    <p> Everything you need to know about copywriting that attracts and converts.</p>
+                    <h3>The Starter Guide</h3>
+                    <p>Everything you need to know about Copywriting that attracts and converts.</p>
                     <a href="https://drive.google.com/file/d/1-87L6LzWtWE2-YFhTXZ54QCaZ4VMaq5u/view?usp=drivesdk" class="btn-primary outline" style="display:block;text-align:center;">Download Free →</a>
                 </div>
 
@@ -533,13 +559,14 @@
                     <button class="btn-primary" onclick="showProductPage('toolkit')">Get The Toolkit →</button>
                 </div>
 
-                <!-- Card 3: COMING SOON ($299) -->
+                <!-- Card 3: PLAYBOOK ($299) — UPDATED -->
                 <div class="product-card">
-                    <span class="badge">📖 Coming Soon</span>
-                    <h3>The Psychology of selling Playbook</h3>
-                    <div class="price">$299</div>
-                    <p>The complete buyer psychology playbook — coming soon.</p>
-                    <button class="btn-primary" onclick="showProductPage('playbook')">Pre-Order Now →</button>
+                    <span class="badge">🔥 Best Seller</span>
+                    <h3>The Psychology of Selling Playbook</h3>
+                    <div class="price">$299 <span class="original">$457</span></div>
+                    <div class="price-small">⚡ First 20 buyers only — price increases after</div>
+                    <p>The complete buyer psychology playbook — for online entrepreneurs who are done guessing why their marketing isn't converting.</p>
+                    <button class="btn-primary" onclick="showProductPage('playbook')">Get The Playbook →</button>
                 </div>
 
             </div>
@@ -560,18 +587,16 @@
                 <h4>📦 What's inside</h4>
                 <ul>
                     <li>Copy upgrade that instantly upgrade weak content</li>
-                    <li> 45 Hook proven to grab attention</li>
-                    <li> The buyer research system </li>
+                    <li>Hook templates proven to grab attention</li>
+                    <li>The Buyer research system</li>
                     <li>Fill-in-the-blank copy formulas</li>
-                    <li> THE P.A.I.D copy framework
-        
-            Bonus: Your mini guidebook on how to use this toolkit to write better content in 24 hour </li>
+                    <li>THE P.A.I.D copy framework  and Bonus of how to use it to write better content in 24 hour</li>
                 </ul>
             </div>
 
             <!-- Why This Works -->
             <div class="detail-section">
-                <h4>🧠 How this works</h4>
+                <h4>🧠 Why this works</h4>
                 <div class="persuasion-box">
                     <p>Most people write content and wonder why nobody buys. This toolkit gives you the exact psychological frameworks that make readers feel understood — and ready to buy. No guessing. No wasting hours. Just content that converts.</p>
                 </div>
@@ -595,11 +620,11 @@
                 <p class="sub">Get instant access to the toolkit.</p>
 
                 <div class="form-note">
-                    <strong>How this works:</strong> Fill the form below. Within few hours you'll receive a Payoneer payment request to your email. Once paid, your product arrives in your inbox within 24 hours.
+                    <strong>How this works:</strong> Fill the form below. Within few hour you'll receive a Payoneer payment request to your email. Once paid, your product arrives in your inbox within 24 hours.
                 </div>
 
-                <form netlify netlify-honeypot="bot-field" name="order-toolkit" method="POST">
-                    <input type="hidden" name="form-name" value="order-toolkit" />
+                <form netlify action="/success.html" name="order" method="POST">
+                    <input type="hidden" name="form-name" value="order" />
                     <input type="hidden" name="product" value="Write Better Content in 24 Hours - $27" />
                     <div style="display:none;">
                         <label>Don't fill this out: <input name="bot-field" /></label>
@@ -633,31 +658,110 @@
             <p class="text-small" style="text-align:center;margin-top:1.5rem;">🔒 Secure checkout via Payoneer. No payment taken on this site.</p>
         </div>
 
-        <!-- ═══ PRODUCT DETAIL: PLAYBOOK ($299) ═══ -->
+        <!-- ═══ PRODUCT DETAIL: PLAYBOOK ($299) — COMPLETELY REWRITTEN ═══ -->
         <div id="productPlaybook" class="product-detail">
 
             <button class="back-link" onclick="hideAllProducts()">← Back to all products</button>
 
-            <div class="coming-soon-tag">📖 Coming Soon</div>
-            <h1 class="detail-title">The Psychology of Selling Playbook</h1>
-            <div class="detail-price">$299</div>
+            <h1 class="detail-title">The Psychology of Selling</h1>
+            <p class="detail-subtitle">The complete buyer psychology playbook — for online entrepreneurs who are done guessing why their marketing isn't converting.</p>
 
-            <p style="color:#d1d5db; font-size:1.05rem; line-height:1.6; margin-bottom:1.5rem;">
-                The Persuadly Playbook is almost here. Follow us on social media to be the first to know.
-            </p>
+            <div class="detail-price"><span class="original">$457</span> $299</div>
+            <div class="detail-price-small">⚡ Early Bird — First 20 buyers only. Price increases after.</div>
 
-            <!-- Order Form for pre-order -->
+            <!-- Hook Paragraph -->
+            <div class="hook-paragraph">
+                You're not bad at selling. You're speaking a language your buyer's brain doesn't respond to. Every purchase decision a human makes is driven by specific psychological triggers — not logic, not features, not how hard you worked on your product. Until you understand those triggers, you're guessing. And guessing is expensive. This playbook ends the guessing.
+            </div>
+
+            <!-- What's Inside -->
+            <div class="detail-section">
+                <h4>📦 What's inside</h4>
+
+                <div class="module-grid">
+                    <div class="module-card">
+                        <h4>Module 1: The Buyer's Hidden Map</h4>
+                        <p>The 4 emotional stages every buyer moves through before they pay — and the exact sentence to write at each stage. Most marketers skip stages 1 and 2 entirely. That's why they lose the sale before it ever started.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>Module 2: The 7 Triggers That Actually Work</h4>
+                        <p>Not scarcity and social proof — everyone knows those. These are the deeper psychological mechanisms underneath. The 'because' effect. Loss aversion. Identity alignment. Each one with real brand examples and a fill-in-the-blank template.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>Module 3: The Objection Vault</h4>
+                        <p>The 5 real reasons people don't buy — not the excuses they say, but the fears underneath. Plus a complete 3-email sequence that flips each objection before your buyer ever voices it.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>Module 4: The Neuroscience of Persuasive Writing</h4>
+                        <p>Why stories outsell features every time. How to write a first line that makes it impossible to stop reading. The 5 most psychologically powerful words in English — and how to use them in any copy you write.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>Module 5: The 24-Hour Application Sprint</h4>
+                        <p>One worksheet. One piece of your existing marketing. Completely rebuilt using everything you've learned. Before and after examples and full audit checklist included.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>Bonus 1: The Psychology Swipe File</h4>
+                        <p>50 real-world examples of psychological triggers working across ecommerce, courses, apps and physical products. Study the structure. Steal it. Make it yours.</p>
+                    </div>
+                    <div class="module-card">
+                        <h4>Bonus 2: The Persuasion Book Library</h4>
+                        <p>20 foundational books on psychology, persuasion and influence. Worth $200-400 individually. Included completely free.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Stack Table -->
+            <div class="detail-section">
+                <h4>💰 What you're getting</h4>
+                <div class="value-table">
+                    <div class="row">
+                        <span class="label">The complete 5-module playbook</span>
+                        <span class="amount">$197</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">The Objection Vault email sequence</span>
+                        <span class="amount">$97</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">50-example Swipe File</span>
+                        <span class="amount">$67</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">The 24-Hour Sprint Worksheet</span>
+                        <span class="amount">$47</span>
+                    </div>
+                    <div class="row">
+                        <span class="label">Persuasion Book Library (10+ books)</span>
+                        <span class="amount">$400</span>
+                    </div>
+                    <div class="row" style="border-top:1px solid #2a2a2a;">
+                        <span class="label" style="font-weight:700;">Total value</span>
+                        <span class="amount" style="font-weight:700;">$808</span>
+                    </div>
+                    <div class="row highlight">
+                        <span class="label">Your price today</span>
+                        <span class="amount">$299</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closing Paragraph -->
+            <div class="closing-paragraph">
+                The brands that outsell their competitors are not smarter. They don't work harder. They don't have bigger budgets. They understand something about buying behavior that most people never learn. This playbook is that something. For the first 20 buyers — <strong>$299</strong>. After that the price goes up.
+            </div>
+
+            <!-- Order Form -->
             <div class="order-form-wrap">
-                <h4>Reserve your copy now</h4>
-                <p class="sub">Pay $299 and be first in line when it launches.</p>
+                <h4>Complete your order</h4>
+                <p class="sub">Get the playbook and start selling with psychology.</p>
 
                 <div class="form-note">
-                    <strong>How this works:</strong> Fill the form below. Within a few hours you'll receive a Payoneer payment request to your email. Once paid, your spot is secured. You'll get the playbook immediately on launch day.
+                    <strong>How this works:</strong> Fill the form below. Within few hour you'll receive a Payoneer payment request to your email. Once paid, your playbook arrives in your inbox within 24 hours.
                 </div>
 
-                <form name="order" netlify action="/success.html">>
-                    <input type="hidden" name="form-name" value="order-playbook" />
-                    <input type="hidden" name="product" value="The Persuadly Playbook - $299" />
+                <form netlify action="/success.html" name="playbook-order" method="POST">
+                    <input type="hidden" name="form-name" value="playbook-order" />
+                    <input type="hidden" name="product" value="The Psychology of Selling Playbook - $299" />
                     <div style="display:none;">
                         <label>Don't fill this out: <input name="bot-field" /></label>
                     </div>
@@ -692,7 +796,7 @@
 
         <!-- Footer -->
         <div class="footer">
-            © 2026 Persuadly — Built with ❤️‍🔥
+            © 2026 Persuadly — Built with 🧠 
         </div>
 
     </div>
@@ -724,4 +828,5 @@
         }
     </script>
 </body>
-</html>
+                        </html>
+                    
